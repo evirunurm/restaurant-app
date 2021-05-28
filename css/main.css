@@ -30,4 +30,23 @@
   background-color: red;
 }
 
-.boton-footer {}
+.boton-footer { 
+    border-radius: 50%;
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    left: 160px;
+    top: 685px;
+    background-color:orangered; 
+    box-shadow: 10px 10px 12px silver;
+     
+}
+.img-buttom {
+    position: absolute;
+    width: 18.5px;
+    height: 16.83px;
+    left: 176px;
+    top: 703px;
+    border: 2px solid #FBFBFB;
+}
+    
