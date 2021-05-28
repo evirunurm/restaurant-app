@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .scroll-item {
@@ -29,4 +30,27 @@
   background-color: red;
 }
 
-.boton-footer {}
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.boton-footer {
+  border-radius: 50%;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* left: 160px;
+  top: 685px; */
+  background-color: orangered;
+  box-shadow: 10px 10px 12px silver;
+}
+
+.boton-footer img {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
