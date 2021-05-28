@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
 }
 
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
 /* NAV */
 nav {
   display: flex;
@@ -51,22 +55,12 @@ header h2 {
 .menu {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: 5%;
-  border-radius: 17%;
-  background-color: white;
-  width: 100px;
-  height: 120px;
   justify-content: center;
   position: relative;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 55vh;
   width: 100%;
-}
-
-.scroll-item h4 {
-  padding-top: 20px;
 }
 
 .menu-item {
@@ -170,6 +164,17 @@ header h2 {
   flex-direction: column;
   align-items: center;
   width: 20px;
+  align-items: center;
+  margin-left: 5%;
+  border-radius: 17%;
+  background-color: white;
+  /* box-shadow: 2px 2px 2px 2px red; */
+  width: 100px;
+  height: 120px;
+}
+
+.scroll-item h4 {
+  padding-top: 20px;
 }
 
 /* FOOTER */
