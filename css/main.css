@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .scroll-item {
@@ -15,7 +16,6 @@
   flex-direction: column;
   align-items: center;
   width: 20px;
-  overflow-wrap: ;
 }
 
 .menu-item {
@@ -30,23 +30,27 @@
   background-color: red;
 }
 
-.boton-footer { 
-    border-radius: 50%;
-    position: absolute;
-    width: 56px;
-    height: 56px;
-    left: 160px;
-    top: 685px;
-    background-color:orangered; 
-    box-shadow: 10px 10px 12px silver;
-     
+footer {
+  display: flex;
+  justify-content: center;
 }
-.img-buttom {
-    position: absolute;
-    width: 18.5px;
-    height: 16.83px;
-    left: 176px;
-    top: 703px;
-    border: 2px solid #FBFBFB;
+
+.boton-footer {
+  border-radius: 50%;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* left: 160px;
+  top: 685px; */
+  background-color: orangered;
+  box-shadow: 10px 10px 12px silver;
 }
-    
+
+.boton-footer img {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
