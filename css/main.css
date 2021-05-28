@@ -1,9 +1,43 @@
+/* GENERAL DESPOSITION */
 * {
   padding: 0;
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  padding: 5%;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5%;
+}
+
+.nav__logo {
+  font-weight: 700;
+}
+
+/* HEADER */
+header {
+  padding-bottom: 5%;
+}
+
+header h1 {
+  font-weight: 600;
+  padding-bottom: 2%;
+}
+
+header h2 {
+  font-weight: 500;
+  font-size: 1em;
+  opacity: 40%;
+}
+
+/* SCROLL CLASISICATION SECTION */
 .scroll-horizontal {
   display: flex;
   flex-direction: row;
@@ -30,6 +64,7 @@
   background-color: red;
 }
 
+/* FOOTER */
 footer {
   display: flex;
   justify-content: center;
