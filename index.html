@@ -3,9 +3,11 @@
 
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/app.css">
     <title>Food For Home</title>
   </head>
 
@@ -42,39 +44,51 @@
           <h4>Dessert</h4>
         </div>
       </section>
+
       <section class="menu">
         <div class="menu__item">
-          <img src="" alt="">
+          <img src="/img/chicken-veggi-salad.png" alt="">
           <div class="menu__item-text">
             <h3 class="menu__item-price"></h3>
             <h3 class="menu__item-title">Chicken Veggi Salad</h3>
+            <p class="menu__item-desc">With cheese sauce</p>
+            <div class="menu__item-amount">
+              <div class="menu__item-amount-minus">
+                <h3>-</h3>
+              </div>
+              <h3 class="menu__item-amount-count">02</h3>
+              <div class="menu__item-amount-plus">
+                <h3>+</h3>
+              </div>
+            </div>
           </div>
-
         </div>
       </section>
     </main>
-    <footer class="icones-footer">
-    <nav>
-      <button class="boton-footer" type="button" name="button">
-        <img src="img/vector_cart.svg" alt="cart-footer">
-
-      <button class="home" type="button" name="button">
-        <img src="img/vector_home.svg" alt="home-footer">
-          </button>
-
-      <button class="pack" type="button" name="button">
-        <img src="img/vector_pack.svg" alt="pack-footer">
-         </button>
-
-      <button class="heart" type="button" name="button">
-        <img src="img/vector_heart.svg" alt="heart-footer">
-          </button>
+    
+        <nav class="nav-footer">
           
-      <button class="user" type="button" name="button">
-        <img src="img/vector_user.svg" alt="user-footer">
-          </button>
-    </nav>
-  </footer>
+          <button class="home" type="button" name="button">
+            <img src="./img/vector_home.svg" alt="home-footer">
+              </button>
+
+          <button class="pack" type="button" name="button">
+            <img src="./img/vector_pack.svg" alt="pack-footer">
+            </button>
+
+            <button class="boton-footer" type="button" name="button">
+              <img src="./img/vector_cart.svg" alt="cart-footer">
+            </button>
+
+          <button class="heart" type="button" name="button">
+            <img src="./img/vector_heart.svg" alt="heart-footer">
+              </button>
+              
+          <button class="user" type="button" name="button">
+            <img src="./img/vector_user.svg" alt="user-footer">
+              </button>
+        </nav>
+  
   </body>
 
 </html>
