@@ -6,9 +6,9 @@
 /* ********************* */
 .clasification {
   display: flex;
-  height: 50%;
+  height: 20vh;
   overflow-x: scroll;
-  overflow-y: visible;
+  overflow-y: hidden;
 }
 
 .clasification::-webkit-scrollbar {
@@ -139,6 +139,6 @@
 }
 
 .menu__item-amount-count {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: 600;
 }
