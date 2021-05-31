@@ -1,0 +1,11 @@
+header{
+    background-color: aquamarine;
+}
+
+
+header nav{
+    display:flex;
+    justify-content: space-between;
+
+   
+}
