@@ -1,0 +1,11 @@
+@import url("./components/section-header.css");
+@import url("./components/section-main.css");
+@import url("./components/section-nav.css");
+
+/* GENERAL DESPOSITION */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
