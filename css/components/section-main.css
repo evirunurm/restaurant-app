@@ -21,10 +21,10 @@
   box-shadow: 0 3px 30px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: 120px;
+  height: 7.3em;
   justify-content: center;
-  min-width: 100px;
-  max-width: 100px;
+  min-width: 6em;
+  max-width: 6em;
   margin: 1em 0.5em;
   padding: 3% 2%;
   text-align: center;
@@ -39,17 +39,95 @@
 /* SECTION MENU */
 /* ************ */
 .menu {
-  background-color: orange;
+  background-color: #FAFAFA;
+  height: 50vh;
+  overflow: scroll;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
 }
 
 .menu__item {
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 0.2em 2em;
+  padding: 0.5em 1.5em;
+  margin-bottom: 0.25em;
 }
 
+/* MENU ITEM IMG */
 .menu__item-img {
-  margin: 0 2em;
-  max-height: 150px;
+  margin: 0 2em 0 0;
+  max-height: 110px;
+  min-height: 100px;
+}
+
+/* MENU ITEM TEXT */
+.menu__item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu__item-title, .menu__item-price {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.menu__item-price {
+  color: #FF6A00;
+}
+
+.menu__item-price::before {
+  color: #FF6A00;
+  content: "$";
+  font-size: 0.7em;
+}
+
+.menu__item-desc {
+  font-size: 0.7em;
+  font-weight: 600;
+  opacity: 0.3;
+  padding: 0.25em 0 0.5em 0;
+}
+
+/* MENU ITEM AMOUNT */
+.menu__item-amount {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color: #EBEBEB;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+.menu__item-amount-minus, .menu__item-amount-plus {
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 13px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  height: 1.9em;
+  width: 1.9em;
+}
+
+.menu__item-amount-minus {
+  margin-right: 0.4em;
+}
+
+.menu__item-amount-plus {
+  margin-left: 0.4em;
+}
+
+.menu__item-amount-minus h3, .menu__item-amount-plus h3 {
+  font-size: 1em;
+  font-weight: 700;
+  opacity: 30%;
+}
+
+.menu__item-amount-count {
+  font-size: 1em;
+  font-weight: 600;
 }
