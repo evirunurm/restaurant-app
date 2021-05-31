@@ -3,12 +3,12 @@
 
 /* GENERAL DESPOSITION */
 * {
-  padding: 0;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .scroll {}
 
-.menu {
+.menu {}
