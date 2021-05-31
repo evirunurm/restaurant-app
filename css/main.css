@@ -185,6 +185,7 @@ footer {
 .boton-footer {
   border-radius: 50%;
   position: relative;
+  justify-content: center;
   width: 200px;
   height: 200px;
   /* left: 160px;
