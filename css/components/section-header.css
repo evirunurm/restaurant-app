@@ -1,6 +1,8 @@
 header{
     background-color: aquamarine;
     margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
 }
 
 
@@ -14,10 +16,7 @@ header nav{
 
    
 }
-.title{
 
-
-}
 .title h1{
     font-size: 29px;
     font-weight:800;
