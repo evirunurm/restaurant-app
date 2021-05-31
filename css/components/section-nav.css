@@ -1,4 +1,5 @@
 .icones-footer {
+    background-color: aliceblue;
     display: flex;
 }
 
@@ -13,6 +14,14 @@
     margin-left: 6%;
     margin-top: -6%;
 }
+   /* border-radius: 50%;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    top: -55px; 
+    background-color: orangered;
+    box-shadow: 8px 8px 8px silver;
+    border:none; */
 
 .nav-footer {
 
@@ -26,6 +35,14 @@
 }
 
 .home, .pack, .heart, .user  {
+    /*
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding:1%;
+    border: none;
+    top: -100%; 
+    margin-left: 18%;
+    }*/
     
         display: flex;
         background-color: rgb(255, 255, 255);

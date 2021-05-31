@@ -3,153 +3,146 @@
 
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/app.css">
+    <title>Food For Home</title>
   </head>
 
   <body>
-    <nav>
-      <p class="nav__logo">Food House</p>
-      <div class="nav__menu">
-        <div class="nav__menu--hovered"></div>
-        <img src="img/menu.svg" alt="">
-      </div>
-    </nav>
     <header>
-      <h1>Food For Home</h1>
-      <h2>Lorem ipsum dolor sit amet. consectetur</h2>
+      <nav>
+        <h2 class="logo">Food House</h2>
+        <div class="menuIzqNav">
+          <img src="./img/menu.svg" alt="">
+        </div>
+      </nav>
+
+      <div class="title">
+        <h1>Food For Home</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+      </div>
     </header>
+
     <main>
-      <section class="scroll-horizontal">
-        <div class="scroll-item">
-          <img src="img/english-breakfast.svg" alt="desayuno huevos con salsichas">
+      <section class="clasification">
+
+        <div class="clasification__item">
+          <img src="./img/breakfast.svg" alt="">
           <h4>Breakfast</h4>
         </div>
-        <div class="scroll-item">
-          <img src="img/burger.svg" alt="hamburguesa">
-          <h4>Fast food</h4>
+        <div class="clasification__item">
+          <img src="./img/fast-food.svg" alt="">
+          <h4>Fast Food</h4>
         </div>
-        <div class="scroll-item">
-          <img src="img/pollo.svg" alt="pollo con verduras">
+        <div class="clasification__item">
+          <img src="./img/dinner.svg" alt="">
           <h4>Dinner</h4>
         </div>
-        <div class="scroll-item">
-          <img src="img/cake-slice.svg" alt="trozo de tarta">
+        <div class="clasification__item">
+          <img src="./img/cake-slice.svg" alt="">
           <h4>Dessert</h4>
         </div>
+
+
       </section>
 
       <section class="menu">
-
-        <div class="menu-item">
-          <div class="menu-item__img">
-            <img class="" src="img/chicken-veggi-salad.png" alt="">
-          </div>
-          <div class="menu-item__text">
-            <h3 class="menu-item__price">52.00</h3>
-            <h3 class="menu-item__title">Chicken Veggi Salad</h3>
-            <p class="menu-item__desc">With cheese sauce</p>
-            <div class="menu-item__amount">
-              <div class="rest amount__box">
-                <p>-</p>
+        <div class="menu__item">
+          <img class="menu__item-img" src="./img/chicken-veggi-salad.png" alt="">
+          <div class="menu__item-text">
+            <h3 class="menu__item-price">52.00</h3>
+            <h3 class="menu__item-title">Chicken Veggi Salad</h3>
+            <p class="menu__item-desc">With cheese sauce</p>
+            <div class="menu__item-amount">
+              <div class="menu__item-amount-minus">
+                <h3>-</h3>
               </div>
-              <div class="amount">
-                <p class="amount__num">02</p>
-              </div>
-              <div class="sum amount__box">
-                <p>+</p>
+              <h3 class="menu__item-amount-count">02</h3>
+              <div class="menu__item-amount-plus">
+                <h3>+</h3>
               </div>
             </div>
           </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item__img">
-            <img class="" src="img/chicken-veggi-salad.png" alt="">
-          </div>
-          <div class="menu-item__text">
-            <h3 class="menu-item__price">52.00</h3>
-            <h3 class="menu-item__title">Chicken Veggi Salad</h3>
-            <p class="menu-item__desc">With cheese sauce</p>
-            <div class="menu-item__amount">
-              <div class="rest amount__box">
-                <p>-</p>
+        <div class="menu__item">
+          <img class="menu__item-img" src="./img/chicken-veggi-salad.png" alt="">
+          <div class="menu__item-text">
+            <h3 class="menu__item-price">52.00</h3>
+            <h3 class="menu__item-title">Chicken Veggi Salad</h3>
+            <p class="menu__item-desc">With cheese sauce</p>
+            <div class="menu__item-amount">
+              <div class="menu__item-amount-minus">
+                <h3>-</h3>
               </div>
-              <div class="amount">
-                <p class="amount__num">02</p>
-              </div>
-              <div class="sum amount__box">
-                <p>+</p>
+              <h3 class="menu__item-amount-count">02</h3>
+              <div class="menu__item-amount-plus">
+                <h3>+</h3>
               </div>
             </div>
           </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item__img">
-            <img class="" src="img/chicken-veggi-salad.png" alt="">
-          </div>
-          <div class="menu-item__text">
-            <h3 class="menu-item__price">52.00</h3>
-            <h3 class="menu-item__title">Chicken Veggi Salad</h3>
-            <p class="menu-item__desc">With cheese sauce</p>
-            <div class="menu-item__amount">
-              <div class="rest amount__box">
-                <p>-</p>
+        <div class="menu__item">
+          <img class="menu__item-img" src="./img/chicken-veggi-salad.png" alt="">
+          <div class="menu__item-text">
+            <h3 class="menu__item-price">52.00</h3>
+            <h3 class="menu__item-title">Chicken Veggi Salad</h3>
+            <p class="menu__item-desc">With cheese sauce</p>
+            <div class="menu__item-amount">
+              <div class="menu__item-amount-minus">
+                <h3>-</h3>
               </div>
-              <div class="amount">
-                <p class="amount__num">02</p>
-              </div>
-              <div class="sum amount__box">
-                <p>+</p>
+              <h3 class="menu__item-amount-count">02</h3>
+              <div class="menu__item-amount-plus">
+                <h3>+</h3>
               </div>
             </div>
           </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item__img">
-            <img class="" src="img/chicken-veggi-salad.png" alt="">
-          </div>
-          <div class="menu-item__text">
-            <h3 class="menu-item__price">52.00</h3>
-            <h3 class="menu-item__title">Chicken Veggi Salad</h3>
-            <p class="menu-item__desc">With cheese sauce</p>
-            <div class="menu-item__amount">
-              <div class="rest amount__box">
-                <p>-</p>
+        <div class="menu__item">
+          <img class="menu__item-img" src="./img/chicken-veggi-salad.png" alt="">
+          <div class="menu__item-text">
+            <h3 class="menu__item-price">52.00</h3>
+            <h3 class="menu__item-title">Chicken Veggi Salad</h3>
+            <p class="menu__item-desc">With cheese sauce</p>
+            <div class="menu__item-amount">
+              <div class="menu__item-amount-minus">
+                <h3>-</h3>
               </div>
-              <div class="amount">
-                <p class="amount__num">02</p>
-              </div>
-              <div class="sum amount__box">
-                <p>+</p>
+              <h3 class="menu__item-amount-count">02</h3>
+              <div class="menu__item-amount-plus">
+                <h3>+</h3>
               </div>
             </div>
           </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item__img">
-            <img class="" src="img/chicken-veggi-salad.png" alt="">
-          </div>
-          <div class="menu-item__text">
-            <h3 class="menu-item__price">52.00</h3>
-            <h3 class="menu-item__title">Chicken Veggi Salad</h3>
-            <p class="menu-item__desc">With cheese sauce</p>
-            <div class="menu-item__amount">
-              <div class="rest amount__box">
-                <p>-</p>
+        <div class="menu__item">
+          <img class="menu__item-img" src="./img/chicken-veggi-salad.png" alt="">
+          <div class="menu__item-text">
+            <h3 class="menu__item-price">52.00</h3>
+            <h3 class="menu__item-title">Chicken Veggi Salad</h3>
+            <p class="menu__item-desc">With cheese sauce</p>
+            <div class="menu__item-amount">
+              <div class="menu__item-amount-minus">
+                <h3>-</h3>
               </div>
-              <div class="amount">
-                <p class="amount__num">02</p>
-              </div>
-              <div class="sum amount__box">
-                <p>+</p>
+              <h3 class="menu__item-amount-count">02</h3>
+              <div class="menu__item-amount-plus">
+                <h3>+</h3>
               </div>
             </div>
           </div>
         </div>
-
       </section>
+    </main>
+    
+        <nav class="nav-footer">
+          
+          <button class="home" type="button" name="button">
+            <img src="./img/vector_home.svg" alt="home-footer">
+              </button>
 
       <footer class="icones-footer"> 
         <button class="boton-footer" type="button" name="button">
@@ -168,10 +161,19 @@
             <img class="img5" src="img/vector_user.svg" alt="vector user">
           </div>
 
-        </div>
+            <button class="boton-footer" type="button" name="button">
+              <img src="./img/vector_cart.svg" alt="cart-footer">
+            </button>
 
-      </footer>
-    </main>
+          <button class="heart" type="button" name="button">
+            <img src="./img/vector_heart.svg" alt="heart-footer">
+              </button>
+              
+          <button class="user" type="button" name="button">
+            <img src="./img/vector_user.svg" alt="user-footer">
+              </button>
+        </nav>
+  
   </body>
 
 </html>

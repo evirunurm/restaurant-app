@@ -1,0 +1,41 @@
+header{
+    
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.burger .menuIzqNav{
+
+    font-size: 20px;
+    font-weight: 200px;
+}
+
+
+header nav{
+    
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    letter-spacing: -10%;
+    font-weight:800;
+
+   
+}
+
+.title h1{
+    font-size: 29px;
+    font-weight:800;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    letter-spacing: 10%;
+}
+.title p{
+    margin-bottom: 2%;
+    margin-left: 1%;
+    font-size: 14.50px;
+    color:#1C1C1C;
+    opacity: 40%;
+
+    
+}
