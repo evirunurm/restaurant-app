@@ -1,0 +1,58 @@
+.icons-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  bottom: -3px;
+  height: 70px;
+  background-color: white;
+}
+
+.boton-cart {
+  background-color: #ff4500;
+  bottom: 35px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  position: relative;
+  width: 55px;
+}
+
+.boton-cart:hover {
+  background-color: #b93d0f;
+  cursor: pointer;
+}
+
+.boton-cart img {
+  transform: translate(-7%, -10%);
+}
+
+.home, .pack, .heart, .user {
+  background-color: rgb(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 1%;
+}
+
+.home svg path, .pack svg path {
+  stroke: rgba(0, 0, 0, 0.3);
+}
+
+.heart svg path, .user svg path {
+  fill: rgba(0, 0, 0, 0.3);
+}
+
+.home svg path:hover, .pack svg path:hover {
+  stroke: #FF6900;
+}
+
+.heart svg path:hover, .user svg path:hover {
+  fill: #FF6900;
+}
