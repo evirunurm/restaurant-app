@@ -1,4 +1,13 @@
 .cart-summary {
   position: fixed;
   bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 68, 0, 0.863);
+  border-radius: 25em, 25em, 25em, 25em;
+
+}
+.summary__subtotal-caja, .summary__tax-fees-price, .summary__delivery-total, .summary__total-price {
+flex-direction: column;
+justify-content: space-between;
+
 }
