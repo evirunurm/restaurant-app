@@ -1,0 +1,23 @@
+.cart-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em 1em 0.7em 1em;
+}
+
+.cart-nav__back {
+  width: 25px;
+  height: 25px;
+  background-color: #E5E2E3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.cart-nav__back svg {
+  transform: translate(-25%, 0%);
+}
+
+.cart-nav__back:hover {
+  background-color: #c7c7c7;
+}
