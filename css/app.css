@@ -13,6 +13,17 @@
   padding: 0;
 }
 
+/* .general-container {
+  width: 100%;
+  background-color: red;
+}
+
+.main-page {
+  width: 100%;
+  max-width: 500px;
+  background-color: green;
+  margin: auto;
+} */
 body {
   overflow: hidden;
 }
