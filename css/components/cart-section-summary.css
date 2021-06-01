@@ -22,13 +22,17 @@ flex-direction: row;
 display: flex;
 justify-content: space-between;
 margin:1em;
-
 }
+
+.summary__subtotal-caja, .summary__tax-fees-price, .summary__delivery-total {
+  opacity: 0.7;
+}
+
 .cart-summary__info p {
   font-size: 0.8em;
 }
 .summary__total-price p {
-
+  opacity: 0.9;
   font-size: 0.9em;
 }
 .enviar-pedido {
@@ -39,6 +43,6 @@ margin:1em;
   border-radius: 13px;
   font-weight: 600;
   margin-bottom: 10px;
-  height: 28%;
+  height: 28vh;
 
 }
