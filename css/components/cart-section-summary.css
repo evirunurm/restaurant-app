@@ -2,3 +2,28 @@
   position: fixed;
   bottom: 0;
 }
+/*
+.summary__subtotal-caja{
+
+  display: row;
+  justify-content: space-between;
+}
+
+.summary__tax-fees{
+
+  display: row;
+  justify-content: space-between;
+}
+
+.summary__delivery-total{
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary__total-price{
+  display: row;
+  justify-content: space-between;
+
+}
+*/
