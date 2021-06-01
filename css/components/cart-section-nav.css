@@ -12,6 +12,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-nav__clear:hover {
+  stroke: red;
 }
 
 .cart-nav__back svg {
