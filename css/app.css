@@ -23,5 +23,9 @@ body {
   position: absolute;
   top: 0;
   width: 100vw;
+<<<<<<< HEAD
   /*display: none;*/
+=======
+  /* display: none; */
+>>>>>>> 26042701d78e76b449ad3bd1c6cbb0607c866197
 }
