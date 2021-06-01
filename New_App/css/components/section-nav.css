@@ -1,3 +1,5 @@
+/*SECTION FOOTER*/
+
 .icones-footer {
     display: flex;
 }
@@ -35,4 +37,11 @@
         margin-left: 14%;
 
     }
+.cart-summary__info
+{
+    background-color: #ff4500e0;
+    border-radius: 25%;
+    
+   
 
+}
