@@ -43,6 +43,15 @@
               <img src="./img/cake-slice.svg" alt="">
               <h4>Dessert</h4>
             </div>
+            <div class="clasification__item">
+              <img src="./img/oriental-food.svg" alt="">
+              <h4>Oriental</h4>
+            </div>
+            <div class="clasification__item">
+              <img src="./img/pizza.svg" alt="">
+              <h4>Pizza</h4>
+            </div>
+
           </section>
 
           <section class="menu">
@@ -90,156 +99,64 @@
       </div>
     </div>
 
+    <div class="general-container">
+      <div class="cart-page">
 
-    <div class="cart-page">
-
-      <nav class="cart-nav">
-        <div class="cart-nav__back">
-          <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 1.5L1 6.5L6 11" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <nav class="cart-nav">
+          <div class="cart-nav__back">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 1.5L1 6.5L6 11" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <svg class="cart-nav__clear" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 4.5H4M22 4.5H19.5M4 4.5V19.5L6 21.5H18L19.5 19.5V4.5M4 4.5H8M19.5 4.5H16M8 4.5L8.5 1H15.5L16 4.5M8 4.5H16" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 8V17.5" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-        </div>
-        <svg class="cart-nav__clear" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.5 4.5H4M22 4.5H19.5M4 4.5V19.5L6 21.5H18L19.5 19.5V4.5M4 4.5H8M19.5 4.5H16M8 4.5L8.5 1H15.5L16 4.5M8 4.5H16" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M12 8V17.5" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </nav>
+        </nav>
 
-      <section class="cart">
-        <h2 class="cart__title">My Cart</h3>
-          <div class="cart__item">
-            <div class="cart__item">
-              <img class="cart__item-img" src="./img/food/chicken-veggi-salad.png" alt="">
-              <div class="cart__item-text">
-                <h3 class="cart__item-price">52.00</h3>
-                <h3 class="cart__item-title">Chicken Veggi Salad</h3>
-                <p class="cart__item-desc">With cheese sauce</p>
-                <div class="cart__item-amount">
-                  <div class="cart__item-amount-minus">
-                    <h3>-</h3>
-                  </div>
-                  <h3 class="cart__item-amount-count">02</h3>
-                  <div class="cart__item-amount-plus">
-                    <h3>+</h3>
-                  </div>
-                </div>
-              </div>
+        <section class="cart">
+          <h2 class="cart__title">My Cart</h3>
+
+            <!---------------------------------------------------------------->
+            <!---------------------------------------------------------------->
+            <!-- HERE GOES ALL THE CART ITEMS INCLUDED IN THE CART ARRAY -->
+            <!---------------------------------------------------------------->
+            <!---------------------------------------------------------------->
+
+        </section>
+
+
+        <section class="cart-summary">
+
+          <div class="cart-summary__info">
+            <div class="summary__subtotal-caja">
+              <p class="summary__subtotal">Subtotal</p>
+              <p class="summary__subtotal__price">96.00</p>
+            </div>
+
+            <div class="summary__tax-fees-price">
+
+              <p class="summary__tax-fees">Tax & Fees</p>
+              <p class="summary__tax-fees__price">2.00</p>
+
+            </div>
+            <div class="summary__delivery-total">
+
+              <p class="summary__delivery">Delivery</p>
+              <p class="summary__delivery__price">Free</p>
+            </div>
+
+            <div class="summary__total-price">
+
+              <p class="summary__total">TOTAL</p>
+              <p class="summary__total__price">98.00</p>
             </div>
           </div>
-          <div class="cart__item">
-            <div class="cart__item">
-              <img class="cart__item-img" src="./img/food/chicken-veggi-salad.png" alt="">
-              <div class="cart__item-text">
-                <h3 class="cart__item-price">52.00</h3>
-                <h3 class="cart__item-title">Chicken Veggi Salad</h3>
-                <p class="cart__item-desc">With cheese sauce</p>
-                <div class="cart__item-amount">
-                  <div class="cart__item-amount-minus">
-                    <h3>-</h3>
-                  </div>
-                  <h3 class="cart__item-amount-count">02</h3>
-                  <div class="cart__item-amount-plus">
-                    <h3>+</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cart__item">
-            <div class="cart__item">
-              <img class="cart__item-img" src="./img/food/chicken-veggi-salad.png" alt="">
-              <div class="cart__item-text">
-                <h3 class="cart__item-price">52.00</h3>
-                <h3 class="cart__item-title">Chicken Veggi Salad</h3>
-                <p class="cart__item-desc">With cheese sauce</p>
-                <div class="cart__item-amount">
-                  <div class="cart__item-amount-minus">
-                    <h3>-</h3>
-                  </div>
-                  <h3 class="cart__item-amount-count">02</h3>
-                  <div class="cart__item-amount-plus">
-                    <h3>+</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cart__item">
-            <div class="cart__item">
-              <img class="cart__item-img" src="./img/food/chicken-veggi-salad.png" alt="">
-              <div class="cart__item-text">
-                <h3 class="cart__item-price">52.00</h3>
-                <h3 class="cart__item-title">Chicken Veggi Salad</h3>
-                <p class="cart__item-desc">With cheese sauce</p>
-                <div class="cart__item-amount">
-                  <div class="cart__item-amount-minus">
-                    <h3>-</h3>
-                  </div>
-                  <h3 class="cart__item-amount-count">02</h3>
-                  <div class="cart__item-amount-plus">
-                    <h3>+</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cart__item">
-            <div class="cart__item">
-              <img class="cart__item-img" src="./img/food/chicken-veggi-salad.png" alt="">
-              <div class="cart__item-text">
-                <h3 class="cart__item-price">52.00</h3>
-                <h3 class="cart__item-title">Chicken Veggi Salad</h3>
-                <p class="cart__item-desc">With cheese sauce</p>
-                <div class="cart__item-amount">
-                  <div class="cart__item-amount-minus">
-                    <h3>-</h3>
-                  </div>
-                  <h3 class="cart__item-amount-count">02</h3>
-                  <div class="cart__item-amount-plus">
-                    <h3>+</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-      </section>
-
-
-      <section class="cart-summary">
-
-        <div class="cart-summary__info">
-          <div class="summary__subtotal-caja">
-            <p class="summary__subtotal">Subtotal</p>
-            <p class="summary__subtotal__price">96.00</p>
-          </div>
-
-          <div class="summary__tax-fees-price">
-
-            <p class="summary__tax-fees">Tax & Fees</p>
-            <p class="summary__tax-fees__price">2.00</p>
-
-          </div>
-          <div class="summary__delivery-total">
-
-            <p class="summary__delivery">Delivery</p>
-            <p class="summary__delivery__price">Free</p>
-          </div>
-
-          <div class="summary__total-price">
-
-            <p class="summary__total">TOTAL</p>
-            <p class="summary__total__price">98.00</p>
-          </div>
-        </div>
-        <button class="enviar-pedido" type="button" name="button">Enviar pedido</button>
-      </section>
-
+          <button class="enviar-pedido" type="button" name="button">Enviar pedido</button>
+        </section>
+      </div>
     </div>
-
     <script type="module" src="./js/app.js" charset="utf-8"></script>
-
-
   </body>
 
 </html>

@@ -13,19 +13,22 @@
   padding: 0;
 }
 
-/* .general-container {
-  width: 100%;
-  background-color: red;
+.general-container {
+  width: 100vw;
+  background-color: rgba(251, 110, 58, 1);
 }
 
 .main-page {
   width: 100%;
-  max-width: 500px;
-  background-color: green;
+  max-width: 600px;
+  background-color: white;
   margin: auto;
-} */
+  height: 100vh;
+}
+
 body {
   overflow: hidden;
+  top: 0;
 }
 
 .cart-page {
@@ -34,5 +37,5 @@ body {
   position: absolute;
   top: 0;
   width: 100vw;
-  /*display: none;*/
+  display: none;
 }
