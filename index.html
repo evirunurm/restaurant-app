@@ -27,27 +27,23 @@
 
         <main>
           <section class="clasification">
-            <div class="clasification__item">
+            <div data-category="breakfast" class="clasification__item">
               <img src="./img/breakfast.svg" alt="">
               <h4>Breakfast</h4>
             </div>
-            <div class="clasification__item">
-              <img src="./img/fast-food.svg" alt="">
-              <h4>Fast Food</h4>
-            </div>
-            <div class="clasification__item">
+            <div data-category="dinner" class="clasification__item">
               <img src="./img/dinner.svg" alt="">
               <h4>Dinner</h4>
             </div>
-            <div class="clasification__item">
+            <div data-category="dessert" class="clasification__item">
               <img src="./img/cake-slice.svg" alt="">
               <h4>Dessert</h4>
             </div>
-            <div class="clasification__item">
+            <div data-category="oriental" class="clasification__item">
               <img src="./img/oriental-food.svg" alt="">
               <h4>Oriental</h4>
             </div>
-            <div class="clasification__item">
+            <div data-category="pizza" class="clasification__item">
               <img src="./img/pizza.svg" alt="">
               <h4>Pizza</h4>
             </div>
@@ -108,10 +104,13 @@
               <path d="M6 1.5L1 6.5L6 11" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
-          <svg class="cart-nav__clear" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.5 4.5H4M22 4.5H19.5M4 4.5V19.5L6 21.5H18L19.5 19.5V4.5M4 4.5H8M19.5 4.5H16M8 4.5L8.5 1H15.5L16 4.5M8 4.5H16" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M12 8V17.5" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+          <div class="cart-nav__clear">
+            <svg class="cart-nav__clear" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 4.5H4M22 4.5H19.5M4 4.5V19.5L6 21.5H18L19.5 19.5V4.5M4 4.5H8M19.5 4.5H16M8 4.5L8.5 1H15.5L16 4.5M8 4.5H16" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 8V17.5" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+
         </nav>
 
         <section class="cart">
@@ -131,13 +130,13 @@
           <div class="cart-summary__info">
             <div class="summary__subtotal-caja">
               <p class="summary__subtotal">Subtotal</p>
-              <p class="summary__subtotal__price">96.00</p>
+              <p class="summary__subtotal__price">00.00</p>
             </div>
 
             <div class="summary__tax-fees-price">
 
               <p class="summary__tax-fees">Tax & Fees</p>
-              <p class="summary__tax-fees__price">2.00</p>
+              <p class="summary__tax-fees__price">0</p>
 
             </div>
             <div class="summary__delivery-total">
@@ -149,7 +148,7 @@
             <div class="summary__total-price">
 
               <p class="summary__total">TOTAL</p>
-              <p class="summary__total__price">98.00</p>
+              <p class="summary__total__price">00.00</p>
             </div>
           </div>
           <button class="enviar-pedido" type="button" name="button">Enviar pedido</button>

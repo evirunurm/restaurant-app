@@ -15,8 +15,18 @@
   cursor: pointer;
 }
 
+.cart-nav__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  border-radius: 50%;
+  overflow: visible;
+  margin: 5px;
+}
+
 .cart-nav__clear:hover {
-  stroke: red;
+  background-color: rgba(251, 110, 58, 1);
 }
 
 .cart-nav__back svg {
@@ -24,5 +34,5 @@
 }
 
 .cart-nav__back:hover {
-  background-color: #c7c7c7;
+  background-color: rgba(251, 110, 58, 1);
 }
