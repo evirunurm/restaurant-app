@@ -24,6 +24,7 @@ function changePage(page) {
 	}
 }
 
+
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 //////////////////////////////////////////////
@@ -44,6 +45,7 @@ let buttonSend = document.querySelector(".enviar-pedido");
 function start() {
 	contentArray.forEach(function(objectItem, i) { //TAKE EACH DATA
 		let item = printData(contentArray[i], menu); // PRINT THE DATA AND SET EACH ITEM TO MANU ITEM
+		prepareToUpenPopUp(item);
 		let plusButton = item.querySelector(".menu__item-amount-plus");
 		let minusButton = item.querySelector(".menu__item-amount-minus");
 		plusButton.addEventListener("click", function() { // EVENT LISTENER TO INTERACT WITH + BUTTONS
@@ -54,6 +56,7 @@ function start() {
 		});
 	});
 	startCategorization();
+
 	let clearCartButton = document.querySelector("div.cart-nav__clear"); // CLEAR THE ENTIRE CART
 	clearCartButton.addEventListener("click", function() { // CLEAR CART EVENT LISTENER
 		clearCart();
@@ -62,7 +65,73 @@ function start() {
 		sendArrayCart()
 	})
 }
+//////////////////////////////////////////////
+function prepareToUpenPopUp(item) {
+	let popUpHTML;
+	let itemImg = item.querySelector(".menu__item-img-container");
+	itemImg.addEventListener("click", function() {
+		let object = getObject(itemImg, contentArray);
+		popUpHTML = printPopUp(object);
+		activatePopUpCounter(popUpHTML)
+		backToMenu(popUpHTML)
 
+	});
+
+}
+
+function backToMenu(popUpHTML) {
+	let itemBackgd = popUpHTML.querySelector(".menu__popup-background")
+	itemBackgd.addEventListener("click", function() {
+		popUpHTML.remove();
+	});
+}
+
+function activatePopUpCounter(popUpHTML) {
+	let itemPlusButton = popUpHTML.querySelector(".menu__item-amount-plus");
+	itemPlusButton.addEventListener("click", function() {
+		addItem(popUpHTML);
+	});
+
+	let itemMinusButton = popUpHTML.querySelector(".menu__item-amount-minus");
+	itemMinusButton.addEventListener("click", function() {
+		removeItem(popUpHTML);
+	});
+}
+
+function printPopUp(item) {
+	let popUp = document.createElement("div"); // CREATE A DIV
+	popUp.setAttribute("data-content_id", `${item.id}`); // ADD ATTRIBUTE
+	popUp.className = "menu__popup"; // ADD CLASS
+	popUp.innerHTML = `
+	<div class="menu__popup-area">
+		<div class="menu__popup-img__container">
+			<img class="menu__popup-img" src="${item.imgSrc}" alt="">
+		</div>
+		<div class="menu__popup-text">
+			<h3 class="menu__popup-title">${item.title}</h3>
+			<p class="menu__popup-desc">${item.description}</p>
+			<p class="menu__popup-det__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+		</div>
+		<div class="menu__popup__price">
+			<div class="menu__popup-price">${item.price}</div>
+			<div class="menu__popup-count" data-content_id='${item.id}'>
+				<div class="menu__item-amount-minus">
+					<h3>-</h3>
+				</div>
+				<h3 class="menu__item-amount-count">${item.count}</h3>
+				<div class="menu__item-amount-plus">
+					<h3>+</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="menu__popup-background"></div>
+	`;
+	document.body.prepend(popUp);
+	return popUp;
+}
+
+//////////////////////////////////////////////
 // FUNCTION TO PRINT AN ITEM IN THE MAIN MENU PAGE IN START PAGE
 function printData(objectItem, page) {
 	let item = document.createElement("div"); // CREATE A DIV
@@ -93,9 +162,15 @@ function printData(objectItem, page) {
 
 // GET OBJECT SELECTED ITEMS'S
 function getObject(element, arrayPlatos) {
-	let elementId = element.parentNode.getAttribute("data-content_id");
-	let objectDish = arrayPlatos.find(objectItem => objectItem.id == elementId)
-
+	let objectDish;
+	let elementId;
+	if (element.parentNode.getAttribute("data-content_id")) {
+		elementId = element.parentNode.getAttribute("data-content_id");
+		objectDish = arrayPlatos.find(objectItem => objectItem.id == elementId)
+	} else {
+		elementId = element.getAttribute("data-content_id");
+		objectDish = arrayPlatos.find(objectItem => objectItem.id == elementId)
+	}
 	return objectDish;
 }
 
@@ -106,9 +181,11 @@ function addItem(element) {
 	let objectItem = getObject(element, contentArray);
 
 	if (isItemInCart(objectItem)) { // ASK IF IT'S IN THE CART TO KNOW IF WE SHOULD ADD IT OR NOT
+
 		objectItem.count++
 		updateCount(objectItem);
-	} else {
+	} else { // IS IT'S NOT
+
 		objectItem.count++
 		cartArray.push(objectItem);
 		updateCount(objectItem);
@@ -122,13 +199,14 @@ function removeItem(element) {
 	let objectItem = getObject(element, contentArray);
 
 	if (objectItem.count == 1) {
-		objectItem.count--
 
+		objectItem.count--
 		updateCount(objectItem);
 		removeFromCartArray(objectItem);
 		removeFromCart(objectItem);
 		getPrice(objectItem, false)
 	} else if (objectItem.count == 0) {} else {
+
 		objectItem.count--
 		updateCount(objectItem);
 		getPrice(objectItem, false)
@@ -183,6 +261,7 @@ function removeFromCart(objectItem) {
 	let element = document.querySelector(`.cart__item[data-content_id="${objectItem.id}"]`);
 	element.remove();
 }
+
 //////////////////////////////////////////////
 
 // PRINT HTML ITEM IN CART
@@ -220,9 +299,8 @@ function printItemCart(dataToPrint) {
 	});
 }
 
-//////////////////////////////////////////////
-//////////////////////////////////////////////
-
+//////////////////////////////////////
+//////////////////////////////////////
 ///////////////// PRICE///////////////
 function getPrice(objectItem, identifierAdd, identifierClear) {
 	let subtotalPrice = getSubtotalPrice(objectItem, identifierAdd, identifierClear);
@@ -312,8 +390,8 @@ function printTotalPrice(totalPrice) {
 }
 
 ///////////////// CLEAR CART /////////////////
-function clearCart() {
 
+function clearCart() {
 	let lengthCartArray = cartArray.length;
 	for (var i = 0; i < lengthCartArray; i++) {
 		removeFromCart(cartArray[i]);
@@ -321,21 +399,21 @@ function clearCart() {
 		cartArray[i].count = 0;
 		updateCount(cartArray[i]);
 	}
+
 	cartArray = [];
 }
-
 
 /////////////// SEND ARRAY CART //////////////
 
 function sendArrayCart() {
-	let cartItemTitles = getCartItemData(cartArray, "title");
-	let cartItemCount = getCartItemData(cartArray, "count");
+	let cartItemTitles = getCartData(cartArray, "title");
+	let cartItemCount = getCartData(cartArray, "count");
 	// let cartItemPrice = getCartItemData(cartArray, "price");
 	let string = createStringCart(cartItemTitles, cartItemCount);
 
 }
 
-function getCartItemData(array, data) {
+function getCartData(array, data) {
 	let cartItemData = []
 	for (var i = 0; i < cartArray.length; i++) {
 		cartItemData.push(eval(`cartArray[i].${data}`));
@@ -348,6 +426,7 @@ function createStringCart(titles, counts, prices) {
 	let stringArray = [];
 	let string = "Articulos: "
 	for (var i = 0; i < titles.length; i++) {
+
 		stringArray.push(`${titles[i]} x ${counts[i]}`)
 
 		if (i == (titles.length - 1)) {
@@ -357,11 +436,9 @@ function createStringCart(titles, counts, prices) {
 		}
 	}
 	string += `Total price: $${price} ;))`
+
 	return string;
 }
-
-
-
 
 ///////////////// CATEGORIZE /////////////////
 
