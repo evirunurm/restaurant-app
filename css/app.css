@@ -39,7 +39,7 @@ body {
   position: absolute;
   top: 0;
   width: 100vw;
-  display: block;
+  display: none;
 }
 
 @media (min-width: 600px) {

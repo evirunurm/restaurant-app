@@ -52,16 +52,15 @@ let contentArray = [{
 	price: 23,
 	description: "Vegan",
 	imgSrc: "../img/food/pad-thai-with-tofu.jpg",
-	type: ["oriental"],
+	type: ["oriental", "dinner"],
 	count: 0
-
 }, {
 	id: 8000,
 	title: "Pad With Chicken",
 	price: 23,
 	description: "With hot sauce",
 	imgSrc: "../img/food/pad-with-chicken.jpg",
-	type: ["oriental"],
+	type: ["oriental", "dinner"],
 	count: 0
 }, {
 	id: 9000,

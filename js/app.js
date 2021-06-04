@@ -46,7 +46,6 @@ function start() {
 		let item = printData(contentArray[i], menu); // PRINT THE DATA AND SET EACH ITEM TO MANU ITEM
 		let plusButton = item.querySelector(".menu__item-amount-plus");
 		let minusButton = item.querySelector(".menu__item-amount-minus");
-		startCategorization();
 		plusButton.addEventListener("click", function() { // EVENT LISTENER TO INTERACT WITH + BUTTONS
 			addItem(this);
 		});
@@ -54,12 +53,13 @@ function start() {
 			removeItem(this);
 		});
 	});
+	startCategorization();
 	let clearCartButton = document.querySelector("div.cart-nav__clear"); // CLEAR THE ENTIRE CART
 	clearCartButton.addEventListener("click", function() { // CLEAR CART EVENT LISTENER
 		clearCart();
 	});
 	buttonSend.addEventListener("click", function() {
-
+		sendArrayCart()
 	})
 }
 
@@ -323,6 +323,46 @@ function clearCart() {
 	}
 	cartArray = [];
 }
+
+
+/////////////// SEND ARRAY CART //////////////
+
+function sendArrayCart() {
+	let cartItemTitles = getCartItemData(cartArray, "title");
+	let cartItemCount = getCartItemData(cartArray, "count");
+	// let cartItemPrice = getCartItemData(cartArray, "price");
+	let string = createStringCart(cartItemTitles, cartItemCount);
+
+}
+
+function getCartItemData(array, data) {
+	let cartItemData = []
+	for (var i = 0; i < cartArray.length; i++) {
+		cartItemData.push(eval(`cartArray[i].${data}`));
+	}
+	return cartItemData;
+}
+
+function createStringCart(titles, counts, prices) {
+	let price = document.querySelector(".summary__total__price").textContent;
+	let stringArray = [];
+	let string = "Articulos: "
+	for (var i = 0; i < titles.length; i++) {
+		stringArray.push(`${titles[i]} x ${counts[i]}`)
+
+		if (i == (titles.length - 1)) {
+			string += `${stringArray[i]}. `
+		} else {
+			string += `${stringArray[i]}, `
+		}
+	}
+	string += `Total price: $${price} ;))`
+	return string;
+}
+
+
+
+
 ///////////////// CATEGORIZE /////////////////
 
 function startCategorization() {
