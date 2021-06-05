@@ -74,9 +74,7 @@ function prepareToUpenPopUp(item) {
 		popUpHTML = printPopUp(object);
 		activatePopUpCounter(popUpHTML)
 		backToMenu(popUpHTML)
-
 	});
-
 }
 
 function backToMenu(popUpHTML) {

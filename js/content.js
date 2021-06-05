@@ -1,6 +1,6 @@
 let contentArray = [{
 	id: 1000,
-	title: "Chicken Veggi Salad",
+	title: "Chicken Veggie Salad",
 	price: 10,
 	description: "Witch cheese sauce",
 	imgSrc: "../img/food/chicken-veggi-salad.png",
@@ -18,7 +18,7 @@ let contentArray = [{
 	id: 3000,
 	title: "Eggs With Avocado",
 	price: 13,
-	description: "With cucumber and beaf",
+	description: "With cucumber and beef",
 	imgSrc: "../img/food/eggs-breakfast-avocado.jpg",
 	type: ["breakfast"],
 	count: 0

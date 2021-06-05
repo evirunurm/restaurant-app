@@ -49,11 +49,11 @@
 }
 
 .cart__item-price {
-  color: #FF6A00;
+  color: #ff6c4d;
 }
 
 .cart__item-price::before {
-  color: #FF6A00;
+  color: #ff6c4d;
   content: "$";
   font-size: 70%;
 }
@@ -87,7 +87,7 @@
 }
 
 .cart__item-amount-minus:hover, .cart__item-amount-plus:hover {
-  background-color: rgb(214, 214, 214);
+  background-color: #ff8c74;
   cursor: pointer;
 }
 

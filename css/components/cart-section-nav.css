@@ -23,10 +23,11 @@
   border-radius: 50%;
   overflow: visible;
   margin: 5px;
+  cursor: pointer;
 }
 
 .cart-nav__clear:hover {
-  background-color: rgba(251, 110, 58, 1);
+  background-color: #ff6c4d;
 }
 
 .cart-nav__back svg {
@@ -34,5 +35,5 @@
 }
 
 .cart-nav__back:hover {
-  background-color: rgba(251, 110, 58, 1);
+  background-color: #ff6c4d;
 }
