@@ -3,6 +3,7 @@ import {
 }
 from "./content.js";
 
+
 // BUTTONS NAVEGATION VAR
 let cartPage = document.querySelector(".cart-page");
 let buttonCart = document.querySelector(".boton-cart");
@@ -23,7 +24,6 @@ function changePage(page) {
 		page.style.display = "block";
 	}
 }
-
 
 //////////////////////////////////////////////
 //////////////////////////////////////////////
@@ -406,9 +406,9 @@ function clearCart() {
 function sendArrayCart() {
 	let cartItemTitles = getCartData(cartArray, "title");
 	let cartItemCount = getCartData(cartArray, "count");
-	// let cartItemPrice = getCartItemData(cartArray, "price");
-	let string = createStringCart(cartItemTitles, cartItemCount);
-
+	let stringItems = createStringCartItems(cartItemTitles, cartItemCount);
+	let name = getName();
+	console.log(stringItems);
 }
 
 function getCartData(array, data) {
@@ -419,28 +419,30 @@ function getCartData(array, data) {
 	return cartItemData;
 }
 
-function createStringCart(titles, counts, prices) {
+function createStringCartItems(titles, counts, prices) {
 	let price = document.querySelector(".summary__total__price").textContent;
 	let stringArray = [];
-	let string = "Articulos: "
+	let stringItems = "Articulos: "
 	for (var i = 0; i < titles.length; i++) {
 
 		stringArray.push(`${titles[i]} x ${counts[i]}`)
 
 		if (i == (titles.length - 1)) {
-			string += `${stringArray[i]}. `
+			stringItems += `${stringArray[i]}. `
 		} else {
-			string += `${stringArray[i]}, `
+			stringItems += `${stringArray[i]}, `
 		}
 	}
-	string += `Total price: $${price} ;))`
-
-	return string;
+	stringItems += `Total price: $${price} ;))`
+	return stringItems;
 }
 
+function getName() {
+
+}
 ///////////////// CATEGORIZE /////////////////
 
-function startCategorization() {
+export function startCategorization() {
 	let categories = Array.from(document.querySelectorAll(".clasification__item"));
 	let categoryTurnedOn = false;
 
