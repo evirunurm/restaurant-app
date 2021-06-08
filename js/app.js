@@ -34,7 +34,7 @@ let cartArray = [];
 let arrayPrintedCart = [];
 
 // PAGES VAR
-let menu = document.querySelector(".menu");
+let menu = document.querySelector(".menu"); // <---------------------------------------------------------
 let cart = document.querySelector(".cart");
 
 // BUTTON SEND
@@ -43,17 +43,11 @@ let buttonSend = document.querySelector(".enviar-pedido");
 
 // LOAD THE DATA INTO THE MENU PAGE
 function start() {
-	contentArray.forEach(function(objectItem, i) { //TAKE EACH DATA
-		let item = printData(contentArray[i], menu); // PRINT THE DATA AND SET EACH ITEM TO MANU ITEM
-		prepareToUpenPopUp(item);
-		let plusButton = item.querySelector(".menu__item-amount-plus");
-		let minusButton = item.querySelector(".menu__item-amount-minus");
-		plusButton.addEventListener("click", function() { // EVENT LISTENER TO INTERACT WITH + BUTTONS
-			addItem(this);
-		});
-		minusButton.addEventListener("click", function() { // EVENT LISTENER TO INTERACT WITH - BUTTONS
-			removeItem(this);
-		});
+	contentArray.forEach(function(objectItem) { //TAKE EACH DATA // <------------------------------------
+		let item = printData(objectItem, menu); // PRINT THE DATA AND SET EACH ITEM TO MANU ITEM
+
+		trigerCount(item);
+		prepareToOpenPopUp(item);
 	});
 	let clearCartButton = document.querySelector("div.cart-nav__clear"); // CLEAR THE ENTIRE CART
 	clearCartButton.addEventListener("click", function() { // CLEAR CART EVENT LISTENER
@@ -61,8 +55,21 @@ function start() {
 	});
 }
 
+function trigerCount(item) {
+	let plusButton = item.querySelector(".menu__item-amount-plus");
+	let minusButton = item.querySelector(".menu__item-amount-minus");
+	plusButton.addEventListener("click", function() { // EVENT LISTENER TO INTERACT WITH + BUTTONS
+		addItem(this);
+	});
+	minusButton.addEventListener("click", function() { // EVENT LISTENER TO INTERACT WITH - BUTTONS
+		removeItem(this);
+	});
+}
+
+
+
 //////////////////////////////////////////////
-function prepareToUpenPopUp(item) {
+function prepareToOpenPopUp(item) {
 	let popUpHTML;
 	let itemImg = item.querySelector(".menu__item-img-container");
 	itemImg.addEventListener("click", function() {
@@ -125,9 +132,11 @@ function printPopUp(item) {
 	return popUp;
 }
 
+
 //////////////////////////////////////////////
 // FUNCTION TO PRINT AN ITEM IN THE MAIN MENU PAGE IN START PAGE
-function printData(objectItem, page) {
+
+function printData(objectItem, page) { // <-------------------------------------------------------------------
 	let item = document.createElement("div"); // CREATE A DIV
 	item.setAttribute("data-content_id", `${objectItem.id}`); // ADD ATTRIBUTE
 	item.className = "menu__item"; // ADD CLASS
@@ -135,24 +144,31 @@ function printData(objectItem, page) {
 		<div class="menu__item-img-container">
 			<img class="menu__item-img" src="${objectItem.imgSrc}" alt="">
 		</div>
+
 	  <div class="menu__item-text">
 	    <h3 class="menu__item-price">${objectItem.price + ".00"}</h3>
 	    <h3 class="menu__item-title">${objectItem.title}</h3>
 	    <p class="menu__item-desc">${objectItem.description}</p>
+
 	    <div class="menu__item-amount" data-content_id='${objectItem.id}'>
 	      <div class="menu__item-amount-minus">
 	        <h3>-</h3>
 	      </div>
+
 	      <h3 class="menu__item-amount-count">${"0" + objectItem.count}</h3>
+
 	      <div class="menu__item-amount-plus">
 	        <h3>+</h3>
 	      </div>
 	    </div>
+
 	  </div>
 		`; // ADD ALL THE ELEMNTS WITH THEIR RESPECTIVE ID'S
 	page.appendChild(item); // ADD THE DIV TO THE MENU
 	return item;
 }
+
+
 
 // GET OBJECT SELECTED ITEMS'S
 function getObject(element, arrayPlatos) {
@@ -407,7 +423,7 @@ window.constructorString = function() {
 
 	for (var i = 0; i < cartItemTitles.length; i++) {
 		if (i == (cartItemTitles.length - 1)) {
-			cartString += `${cartItemCount[i]} x ${cartItemTitles[i]}. Total price : ${price}.`
+			cartString += `${cartItemCount[i]} x ${cartItemTitles[i]}. Total price : $${price}.`
 		} else {
 			cartString += `${cartItemCount[i]} x ${cartItemTitles[i]}, `
 		}
@@ -423,11 +439,12 @@ function getCartData(array, data) {
 	return cartItemData;
 }
 
-window.setActionForm = function(form) {
-	form.action = `https://wa.me/34642302731?text=${cartString}`;
-	// form.action = `https://wa.me/34642302731?text=Articulos:%202%20x%20Chicken%20Veggie%20Salad,%202%20x%20Grilled%20Lamb,%201%20x%20Pistachio%20Cake.%20Total%20price%20:%2065.55.%20Name:%20Evelin`;
-	// DOESNT APPLY RIGHT. WELL, APPLIES BUT DOESNT OPEN FULLY. !!!!!
+window.openWindowWhatsapp = function() {
+	window.open(`https://wa.me/34642302731?text=${cartString}`);
+
 }
+
+
 
 ///////////////// CATEGORIZE /////////////////
 
@@ -440,14 +457,18 @@ window.printCategory = function(category) {
 
 		clearPage(menu);
 		categoryItemsArray.forEach((categoryItem, i) => {
-			printData(categoryItem, menu);
+			let itemHTML = printData(categoryItem, menu);
+			trigerCount(itemHTML);
+			prepareToOpenPopUp(itemHTML);
 		});
 		setInColor(categoryActivated, category)
 		category.setAttribute(`data-activated`, "active");
 	} else if (categoryActivated == "active") {
 		clearPage(menu);
 		contentArray.forEach((contentItem, i) => {
-			printData(contentItem, menu);
+			let itemHTML = printData(contentItem, menu);
+			trigerCount(itemHTML);
+			prepareToOpenPopUp(itemHTML)
 		});
 		setInColor(categoryActivated, category)
 		category.setAttribute(`data-activated`, "inactive");

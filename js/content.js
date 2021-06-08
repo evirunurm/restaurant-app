@@ -29,7 +29,7 @@ let contentArray = [{
 	description: "With chineese mushrooms",
 	imgSrc: "../img/food/beef-noodle-soup.jpg",
 	type: ["oriental"],
-	count: 0
+	count: 0,
 }, {
 	id: 5000,
 	title: "Chicken Noodle Soup",
