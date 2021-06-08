@@ -1,6 +1,10 @@
 ///////////////// CATEGORIZE /////////////////
+import {
+	contentArray
+}
+from "./content.js";
 
-export function startCategorization() {
+function startCategorization() {
 	let categories = Array.from(document.querySelectorAll(".clasification__item"));
 	let categoryTurnedOn = false;
 
@@ -61,3 +65,6 @@ function changeColorCategoryButton(categoryTurnedOn, categoryButton) {
 		categoryButton.style.backgroundColor = "white"; // COLOR --> WHITE
 	}
 }
+export {
+	startCategorization
+};

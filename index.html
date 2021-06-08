@@ -33,23 +33,23 @@
 
         <main>
           <section class="clasification">
-            <div data-category="breakfast" class="clasification__item">
+            <div onclick="printCategory(this)" data-category="breakfast" data-activated="inactive" class="clasification__item">
               <img src="./img/breakfast.svg" alt="">
               <h4>Breakfast</h4>
             </div>
-            <div data-category="dinner" class="clasification__item">
+            <div onclick="printCategory(this)" data-category="dinner" data-activated="inactive" class="clasification__item">
               <img src="./img/dinner.svg" alt="">
               <h4>Dinner</h4>
             </div>
-            <div data-category="dessert" class="clasification__item">
+            <div onclick="printCategory(this)" data-category="dessert" data-activated="inactive" class="clasification__item">
               <img src="./img/cake-slice.svg" alt="">
               <h4>Dessert</h4>
             </div>
-            <div data-category="oriental" class="clasification__item">
+            <div onclick="printCategory(this)" data-category="oriental" data-activated="inactive" class="clasification__item">
               <img src="./img/oriental-food.svg" alt="">
               <h4>Oriental</h4>
             </div>
-            <div data-category="pizza" class="clasification__item">
+            <div onclick="printCategory(this)" data-category="pizza" data-activated="inactive" class="clasification__item">
               <img src="./img/pizza.svg" alt="">
               <h4>Pizza</h4>
             </div>
@@ -129,7 +129,26 @@
             <!---------------------------------------------------------------->
         </section>
 
-        <section class="cart-summary">
+
+        <form onsubmit="constructorString(); setActionForm(this);" class="cart-summary" target="_blank"
+          action='https://wa.me/34642302731?text=Articulos:%202%20x%20Chicken%20Veggie%20Salad,%202%20x%20Grilled%20Lamb,%201%20x%20Pistachio%20Cake.%20Total%20price%20:%2065.55.%20Name:%20Evelin'>
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <!-- HERE IS THE PROBLEM -->
+          <div class="ask-name">
+            <input required class="ask-name__input" type="text" placeholder="Name">
+          </div>
 
           <div class="cart-summary__info">
             <div class="summary__subtotal-caja">
@@ -155,8 +174,10 @@
               <p class="summary__total__price">00.00</p>
             </div>
           </div>
-          <button class="enviar-pedido" type="button" name="button">Enviar pedido</button>
-        </section>
+
+          <input class="enviar-pedido" type="submit" value="Enviar pedido">
+        </form>
+
       </div>
     </div>
     <script type="module" src="./js/app.js" charset="utf-8"></script>

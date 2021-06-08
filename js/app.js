@@ -55,16 +55,12 @@ function start() {
 			removeItem(this);
 		});
 	});
-	startCategorization();
-
 	let clearCartButton = document.querySelector("div.cart-nav__clear"); // CLEAR THE ENTIRE CART
 	clearCartButton.addEventListener("click", function() { // CLEAR CART EVENT LISTENER
 		clearCart();
 	});
-	buttonSend.addEventListener("click", function() {
-		sendArrayCart()
-	})
 }
+
 //////////////////////////////////////////////
 function prepareToUpenPopUp(item) {
 	let popUpHTML;
@@ -397,18 +393,26 @@ function clearCart() {
 		cartArray[i].count = 0;
 		updateCount(cartArray[i]);
 	}
-
 	cartArray = [];
 }
 
 /////////////// SEND ARRAY CART //////////////
+let cartString = "Articulos: ";
 
-function sendArrayCart() {
+window.constructorString = function() {
 	let cartItemTitles = getCartData(cartArray, "title");
 	let cartItemCount = getCartData(cartArray, "count");
-	let stringItems = createStringCartItems(cartItemTitles, cartItemCount);
-	let name = getName();
-	console.log(stringItems);
+	let price = document.querySelector(".summary__total__price").textContent;
+	let name = document.querySelector(".ask-name__input").value;
+
+	for (var i = 0; i < cartItemTitles.length; i++) {
+		if (i == (cartItemTitles.length - 1)) {
+			cartString += `${cartItemCount[i]} x ${cartItemTitles[i]}. Total price : ${price}.`
+		} else {
+			cartString += `${cartItemCount[i]} x ${cartItemTitles[i]}, `
+		}
+	}
+	cartString += ` Name: ${name}`
 }
 
 function getCartData(array, data) {
@@ -419,89 +423,131 @@ function getCartData(array, data) {
 	return cartItemData;
 }
 
-function createStringCartItems(titles, counts, prices) {
-	let price = document.querySelector(".summary__total__price").textContent;
-	let stringArray = [];
-	let stringItems = "Articulos: "
-	for (var i = 0; i < titles.length; i++) {
-
-		stringArray.push(`${titles[i]} x ${counts[i]}`)
-
-		if (i == (titles.length - 1)) {
-			stringItems += `${stringArray[i]}. `
-		} else {
-			stringItems += `${stringArray[i]}, `
-		}
-	}
-	stringItems += `Total price: $${price} ;))`
-	return stringItems;
+window.setActionForm = function(form) {
+	form.action = `https://wa.me/34642302731?text=${cartString}`;
+	// form.action = `https://wa.me/34642302731?text=Articulos:%202%20x%20Chicken%20Veggie%20Salad,%202%20x%20Grilled%20Lamb,%201%20x%20Pistachio%20Cake.%20Total%20price%20:%2065.55.%20Name:%20Evelin`;
+	// DOESNT APPLY RIGHT. WELL, APPLIES BUT DOESNT OPEN FULLY. !!!!!
 }
 
-function getName() {
-
-}
 ///////////////// CATEGORIZE /////////////////
 
-export function startCategorization() {
-	let categories = Array.from(document.querySelectorAll(".clasification__item"));
-	let categoryTurnedOn = false;
+window.printCategory = function(category) {
+	let categoryName = category.getAttribute(`data-category`);
+	let categoryItemsArray = getCategoryItems(categoryName);
+	let categoryActivated = category.getAttribute(`data-activated`);
+	resetActivatedCategory();
+	if (categoryActivated == "inactive") {
 
-	categories.forEach((item, i) => {
-		let categoryName = item.getAttribute(`data-category`); //GET ALL CATEGORIES PRESENT ON HTML
-		let categoryButton = document.querySelector(`[data-category="${categoryName}"]`) //GET ALL HTML BUTTONS FOR CATEGORIES
-
-		categoryButton.addEventListener("click", function() {
-			let categoryArray = getItemsCategory(categoryName, categories); //GET AN ARRAY WITH ALL THE ITEMS PERTENECIENTES TO THE CATEGORY
-
-			if (categoryTurnedOn) { // TOGGLE THE CATEGORY BUTTON
-				categoryTurnedOn = false;
-				changeColorCategoryButton(categoryTurnedOn, categoryButton); // TOGGLE THE CATEGORY BUTTON COLOR
-				showAllItems(categoryArray, categoryName); // SHOW ALL THE ITEMS
-			} else {
-				categoryTurnedOn = true;
-				changeColorCategoryButton(categoryTurnedOn, categoryButton);
-				hideAlienItems(categoryArray, categoryName);
-			}
+		clearPage(menu);
+		categoryItemsArray.forEach((categoryItem, i) => {
+			printData(categoryItem, menu);
 		});
+		setInColor(categoryActivated, category)
+		category.setAttribute(`data-activated`, "active");
+	} else if (categoryActivated == "active") {
+		clearPage(menu);
+		contentArray.forEach((contentItem, i) => {
+			printData(contentItem, menu);
+		});
+		setInColor(categoryActivated, category)
+		category.setAttribute(`data-activated`, "inactive");
+	}
+}
+
+function resetActivatedCategory() {
+	document.querySelectorAll(".clasification__item").forEach((item, i) => {
+		item.setAttribute(`data-activated`, "inactive");
+		item.style.backgroundColor = "rgb(255, 255, 255)";
 	});
 }
 
-function getItemsCategory(categoryName, categories) {
-	let categoryArray; // CREATE VARIABLE FOR THE ARRAY
-	for (let i = 0; i < categories.length; i++) { // LOOP THROUGH ALL THE CATEGORIES ON EACH ITEM(i)
+function setInColor(activation, category) {
+	if (activation == "inactive") {
+		category.style.backgroundColor = "#f6ac9d";
+	}
+}
+
+function getCategoryItems(categoryName) {
+	let categoryArray;
+	for (var i = 0; i < contentArray.length; i++) {
 		categoryArray = contentArray.filter(contentItem => contentItem.type[i] == categoryName); // FILTER IN CONTENT ONLY THE ONES THAT HAS THE SAME TYPE AS SELECTED CATEGORY
-		if (categoryArray.length > 0) { // IF THE REOULTED ARRAY HAS ANY ELEMENT
+		if (categoryArray.length > 0) { // IF THE RESULTED ARRAY HAS ANY ELEMENT
 			return categoryArray;
 		}
 	}
 }
 
-function hideAlienItems(categoryArray, categoryName) {
-	let itemsHTML = Array.from(document.querySelectorAll(`.menu__item`)); // FIND ALL HTML DISHES
-	let alienItems = []; // CREATE VARIABLE FOR THE ARRAY OF NON SELECTED DISHES
-	itemsHTML.forEach((itemHTML, i) => { // LOOP THROUGH ALL DISHES IN EXISTANCE
-		itemHTML.style.display = "none"; // HIDE ALL OF THEM
-		for (let i = 0; i < categoryArray.length; i++) { // LOOP THOUGHT ALL SELECTED ITEMS
-			if (itemHTML.getAttribute("data-content_id") == categoryArray[i].id) { // CHECK EACH HTML ITEM, IF IT HAS THE SANE ID AS THE SELECTED ONES
-				itemHTML.style.display = "flex"; // IF IT HAS --> MAKE IT APPEAR
-			}
-		}
+function clearPage(page) {
+	let pageContent = Array.from(page.childNodes);
+	pageContent.forEach((item, i) => {
+		item.remove()
 	});
 }
 
-function showAllItems() {
-	let itemsHTML = Array.from(document.querySelectorAll(`.menu__item`)); // FIND ALL HTML DISHES
-	itemsHTML.forEach((itemHTML, i) => { // SHOW THEM ALL
-		itemHTML.style.display = "flex";
-	});
-}
 
-function changeColorCategoryButton(categoryTurnedOn, categoryButton) {
-	if (categoryTurnedOn) { // IF THE CATEGORY IS SELECTED
-		categoryButton.style.backgroundColor = "grey"; // COLOR --> GREY
-	} else { // IF NOT
-		categoryButton.style.backgroundColor = "white"; // COLOR --> WHITE
-	}
-}
+
+
+
+// function startCategorization() {
+// 	let categories = Array.from(document.querySelectorAll(".clasification__item"));
+// 	let categoryTurnedOn = false;
+//
+// 	categories.forEach((item, i) => {
+// 		let categoryName = item.getAttribute(`data-category`); //GET ALL CATEGORIES PRESENT ON HTML
+// 		let categoryButton = document.querySelector(`[data-category="${categoryName}"]`) //GET ALL HTML BUTTONS FOR CATEGORIES
+//
+// 		categoryButton.addEventListener("click", function() {
+// 			let categoryArray = getItemsCategory(categoryName, categories); //GET AN ARRAY WITH ALL THE ITEMS PERTENECIENTES TO THE CATEGORY
+//
+// 			if (categoryTurnedOn) { // TOGGLE THE CATEGORY BUTTON
+// 				categoryTurnedOn = false;
+// 				changeColorCategoryButton(categoryTurnedOn, categoryButton); // TOGGLE THE CATEGORY BUTTON COLOR
+// 				showAllItems(categoryArray, categoryName); // SHOW ALL THE ITEMS
+// 			} else {
+// 				categoryTurnedOn = true;
+// 				changeColorCategoryButton(categoryTurnedOn, categoryButton);
+// 				hideAlienItems(categoryArray, categoryName);
+// 			}
+// 		});
+// 	});
+// }
+//
+// function getItemsCategory(categoryName, categories) {
+// 	let categoryArray; // CREATE VARIABLE FOR THE ARRAY
+// 	for (let i = 0; i < categories.length; i++) { // LOOP THROUGH ALL THE CATEGORIES ON EACH ITEM(i)
+// 		categoryArray = contentArray.filter(contentItem => contentItem.type[i] == categoryName); // FILTER IN CONTENT ONLY THE ONES THAT HAS THE SAME TYPE AS SELECTED CATEGORY
+// 		if (categoryArray.length > 0) { // IF THE REOULTED ARRAY HAS ANY ELEMENT
+// 			return categoryArray;
+// 		}
+// 	}
+// }
+//
+// function hideAlienItems(categoryArray, categoryName) {
+// 	let itemsHTML = Array.from(document.querySelectorAll(`.menu__item`)); // FIND ALL HTML DISHES
+// 	let alienItems = []; // CREATE VARIABLE FOR THE ARRAY OF NON SELECTED DISHES
+// 	itemsHTML.forEach((itemHTML, i) => { // LOOP THROUGH ALL DISHES IN EXISTANCE
+// 		itemHTML.style.display = "none"; // HIDE ALL OF THEM
+// 		for (let i = 0; i < categoryArray.length; i++) { // LOOP THOUGHT ALL SELECTED ITEMS
+// 			if (itemHTML.getAttribute("data-content_id") == categoryArray[i].id) { // CHECK EACH HTML ITEM, IF IT HAS THE SANE ID AS THE SELECTED ONES
+// 				itemHTML.style.display = "flex"; // IF IT HAS --> MAKE IT APPEAR
+// 			}
+// 		}
+// 	});
+// }
+//
+// function showAllItems() {
+// 	let itemsHTML = Array.from(document.querySelectorAll(`.menu__item`)); // FIND ALL HTML DISHES
+// 	itemsHTML.forEach((itemHTML, i) => { // SHOW THEM ALL
+// 		itemHTML.style.display = "flex";
+// 	});
+// }
+//
+// function changeColorCategoryButton(categoryTurnedOn, categoryButton) {
+// 	if (categoryTurnedOn) { // IF THE CATEGORY IS SELECTED
+// 		categoryButton.style.backgroundColor = "grey"; // COLOR --> GREY
+// 	} else { // IF NOT
+// 		categoryButton.style.backgroundColor = "white"; // COLOR --> WHITE
+// 	}
+// }
 
 start();

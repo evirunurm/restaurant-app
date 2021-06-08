@@ -207,6 +207,7 @@ let contentArray = [{
 	type: ["breakfast", "dessert"],
 	count: 0
 }];
+
 export {
 	contentArray
 };
