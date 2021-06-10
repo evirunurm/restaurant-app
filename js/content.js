@@ -3,7 +3,7 @@ let contentArray = [{
 	title: "Chicken Veggie Salad",
 	price: 10,
 	description: "Witch cheese sauce",
-	imgSrc: "../img/food/chicken-veggi-salad.png",
+	imgSrc: "./img/food/chicken-veggi-salad.png",
 	type: ["dinner"],
 	count: 0
 }, {
@@ -11,7 +11,7 @@ let contentArray = [{
 	title: "Grilled Lamb",
 	price: 15,
 	description: "With olive oil and teriyaki sauce",
-	imgSrc: "../img/food/grilled-lamb.png",
+	imgSrc: "./img/food/grilled-lamb.png",
 	type: ["dinner"],
 	count: 0
 }, {
@@ -19,7 +19,7 @@ let contentArray = [{
 	title: "Eggs With Avocado",
 	price: 13,
 	description: "With cucumber and beef",
-	imgSrc: "../img/food/eggs-breakfast-avocado.jpg",
+	imgSrc: "./img/food/eggs-breakfast-avocado.jpg",
 	type: ["breakfast"],
 	count: 0
 }, {
@@ -27,7 +27,7 @@ let contentArray = [{
 	title: "Beef Noodle Soup",
 	price: 10,
 	description: "With chineese mushrooms",
-	imgSrc: "../img/food/beef-noodle-soup.jpg",
+	imgSrc: "./img/food/beef-noodle-soup.jpg",
 	type: ["oriental"],
 	count: 0,
 }, {
@@ -35,7 +35,7 @@ let contentArray = [{
 	title: "Chicken Noodle Soup",
 	price: 10,
 	description: "Udon noodles",
-	imgSrc: "../img/food/noodle-soup-with-chicken.jpg",
+	imgSrc: "./img/food/noodle-soup-with-chicken.jpg",
 	type: ["oriental"],
 	count: 0
 }, {
@@ -43,7 +43,7 @@ let contentArray = [{
 	title: "Pad Krapow Gai",
 	price: 15,
 	description: "With rice, egg and lime",
-	imgSrc: "../img/food/pad-krapow-gai.jpg",
+	imgSrc: "./img/food/pad-krapow-gai.jpg",
 	type: ["oriental"],
 	count: 0
 }, {
@@ -51,7 +51,7 @@ let contentArray = [{
 	title: "Pad Thai With Tofu",
 	price: 23,
 	description: "Vegan",
-	imgSrc: "../img/food/pad-thai-with-tofu.jpg",
+	imgSrc: "./img/food/pad-thai-with-tofu.jpg",
 	type: ["oriental", "dinner"],
 	count: 0
 }, {
@@ -59,7 +59,7 @@ let contentArray = [{
 	title: "Pad With Chicken",
 	price: 23,
 	description: "With hot sauce",
-	imgSrc: "../img/food/pad-with-chicken.jpg",
+	imgSrc: "./img/food/pad-with-chicken.jpg",
 	type: ["oriental", "dinner"],
 	count: 0
 }, {
@@ -67,7 +67,7 @@ let contentArray = [{
 	title: "Brownie",
 	price: 3,
 	description: "Fudgy and moist, with chocolate chips and oatmeal",
-	imgSrc: "../img/food/brownie.jpg",
+	imgSrc: "./img/food/brownie.jpg",
 	type: ["dessert"],
 	count: 0
 }, {
@@ -75,7 +75,7 @@ let contentArray = [{
 	title: "Cereal With Blueberries",
 	price: 4,
 	description: "With nuts and light Greek Yogurt",
-	imgSrc: "../img/food/cereal-blueberry.jpg",
+	imgSrc: "./img/food/cereal-blueberry.jpg",
 	type: ["breakfast"],
 	count: 0
 }, {
@@ -83,7 +83,7 @@ let contentArray = [{
 	title: "Cereal With Strawberries",
 	price: 4,
 	description: "With oatmeal, raisins and light Greek Yogurt",
-	imgSrc: "../img/food/cereal-strawberry.jpg",
+	imgSrc: "./img/food/cereal-strawberry.jpg",
 	type: ["breakfast"],
 	count: 0
 }, {
@@ -91,7 +91,7 @@ let contentArray = [{
 	title: "Chocolate Cheesecake",
 	price: 5,
 	description: "With strawberries and chocolate syrope",
-	imgSrc: "../img/food/cheesecake.jpg",
+	imgSrc: "./img/food/cheesecake.jpg",
 	type: ["dessert"],
 	count: 0
 }, {
@@ -99,7 +99,7 @@ let contentArray = [{
 	title: "Three Cheese Pizza",
 	price: 12,
 	description: "Medium sized, two servings",
-	imgSrc: "../img/food/cheese-pizza.jpg",
+	imgSrc: "./img/food/cheese-pizza.jpg",
 	type: ["pizza"],
 	count: 0
 }, {
@@ -107,7 +107,7 @@ let contentArray = [{
 	title: "Chocolate Cookie",
 	price: 3,
 	description: "With chocolate chips",
-	imgSrc: "../img/food/chocolate-cookie.jpg",
+	imgSrc: "./img/food/chocolate-cookie.jpg",
 	type: ["dessert"],
 	count: 0
 }, {
@@ -115,7 +115,7 @@ let contentArray = [{
 	title: "Crêpes",
 	price: 5,
 	description: "With wiped cream and berries, 3 units",
-	imgSrc: "../img/food/crepes.jpg",
+	imgSrc: "./img/food/crepes.jpg",
 	type: ["dessert", "breakfast"],
 	count: 0
 }, {
@@ -123,7 +123,7 @@ let contentArray = [{
 	title: "Croissant",
 	price: 2,
 	description: "With sugar glasse",
-	imgSrc: "../img/food/croissant.jpg",
+	imgSrc: "./img/food/croissant.jpg",
 	type: ["dessert", "breakfast"],
 	count: 0
 }, {
@@ -131,7 +131,7 @@ let contentArray = [{
 	title: "Donughts",
 	price: 5,
 	description: "With chocolate and sprinkles, 3 units",
-	imgSrc: "../img/food/donuts.jpg",
+	imgSrc: "./img/food/donuts.jpg",
 	type: ["dessert"],
 	count: 0
 }, {
@@ -139,7 +139,7 @@ let contentArray = [{
 	title: "Egg Toast",
 	price: 4,
 	description: "Garlic bread aviable",
-	imgSrc: "../img/food/egg-toast.jpg",
+	imgSrc: "./img/food/egg-toast.jpg",
 	type: ["breakfast"],
 	count: 0
 }, {
@@ -147,7 +147,7 @@ let contentArray = [{
 	title: "Hawaiian Pizza",
 	price: 12,
 	description: "With smoked chicken",
-	imgSrc: "../img/food/hawaiian-chicken-pizza.jpg",
+	imgSrc: "./img/food/hawaiian-chicken-pizza.jpg",
 	type: ["pizza"],
 	count: 0
 }, {
@@ -155,7 +155,7 @@ let contentArray = [{
 	title: "Italian Pizza",
 	price: 15,
 	description: "Original italian recipe",
-	imgSrc: "../img/food/italian-pizza.jpg",
+	imgSrc: "./img/food/italian-pizza.jpg",
 	type: ["pizza"],
 	count: 0
 }, {
@@ -163,7 +163,7 @@ let contentArray = [{
 	title: "Pancakes",
 	price: 5,
 	description: "With original Canadian maple syrope",
-	imgSrc: "../img/food/pancakes.jpg",
+	imgSrc: "./img/food/pancakes.jpg",
 	type: ["breakfast"],
 	count: 0
 }, {
@@ -171,7 +171,7 @@ let contentArray = [{
 	title: "Pepperoni Pizza",
 	price: 12,
 	description: "With olives",
-	imgSrc: "../img/food/pepperoni-olive-pizza.jpg",
+	imgSrc: "./img/food/pepperoni-olive-pizza.jpg",
 	type: ["pizza"],
 	count: 0
 }, {
@@ -179,7 +179,7 @@ let contentArray = [{
 	title: "Pistachio Cake",
 	price: 7,
 	description: "With raspberries and cream",
-	imgSrc: "../img/food/pistachio-cake.jpg",
+	imgSrc: "./img/food/pistachio-cake.jpg",
 	type: ["dessert"],
 	count: 0
 }, {
@@ -187,7 +187,7 @@ let contentArray = [{
 	title: "Toasted Chia Bread",
 	price: 6,
 	description: "With cream cheese, nuts, honey and lime drizzle",
-	imgSrc: "../img/food/toasted-chia-bread.jpg",
+	imgSrc: "./img/food/toasted-chia-bread.jpg",
 	type: ["breakfast"],
 	count: 0
 }, {
@@ -195,7 +195,7 @@ let contentArray = [{
 	title: "Vegan Pizza",
 	price: 10,
 	description: "With mushrooms adn cherry tomatoes",
-	imgSrc: "../img/food/vegan-pizza.jpg",
+	imgSrc: "./img/food/vegan-pizza.jpg",
 	type: ["pizza"],
 	count: 0
 }, {
@@ -203,7 +203,7 @@ let contentArray = [{
 	title: "Waffle",
 	price: 10,
 	description: "With sugar glass, 2 units",
-	imgSrc: "../img/food/waffle.jpg",
+	imgSrc: "./img/food/waffle.jpg",
 	type: ["breakfast", "dessert"],
 	count: 0
 }];
