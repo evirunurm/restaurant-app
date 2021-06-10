@@ -34,7 +34,7 @@ let cartArray = [];
 let arrayPrintedCart = [];
 
 // PAGES VAR
-let menu = document.querySelector(".menu"); // <---------------------------------------------------------
+let menu = document.querySelector(".menu"); //
 let cart = document.querySelector(".cart");
 
 // BUTTON SEND
@@ -43,7 +43,7 @@ let buttonSend = document.querySelector(".enviar-pedido");
 
 // LOAD THE DATA INTO THE MENU PAGE
 function start() {
-	contentArray.forEach(function(objectItem) { //TAKE EACH DATA // <------------------------------------
+	contentArray.forEach(function(objectItem) { //TAKE EACH DATA //
 		let item = printData(objectItem, menu); // PRINT THE DATA AND SET EACH ITEM TO MANU ITEM
 
 		trigerCount(item);
@@ -136,7 +136,7 @@ function printPopUp(item) {
 //////////////////////////////////////////////
 // FUNCTION TO PRINT AN ITEM IN THE MAIN MENU PAGE IN START PAGE
 
-function printData(objectItem, page) { // <-------------------------------------------------------------------
+function printData(objectItem, page) { // 
 	let item = document.createElement("div"); // CREATE A DIV
 	item.setAttribute("data-content_id", `${objectItem.id}`); // ADD ATTRIBUTE
 	item.className = "menu__item"; // ADD CLASS
@@ -188,8 +188,9 @@ function getObject(element, arrayPlatos) {
 
 // SUM COUNT IN CASE +
 function addItem(element) {
-	let objectItem = getObject(element, contentArray);
 
+	let objectItem = getObject(element, contentArray);
+	console.log(objectItem);
 	if (isItemInCart(objectItem)) { // ASK IF IT'S IN THE CART TO KNOW IF WE SHOULD ADD IT OR NOT
 
 		objectItem.count++
@@ -222,7 +223,6 @@ function removeItem(element) {
 		getPrice(objectItem, false)
 	}
 }
-
 //////////////////////////////////////////////
 // ASK IF THE ITEM IS ON THE CART
 function isItemInCart(objectItem) {
@@ -244,7 +244,6 @@ function updateCount(itemToUpdate) {
 				countItem.textContent = itemToUpdate.count;
 			}
 		}
-
 	});
 	// CART
 	let countCartArray = document.querySelectorAll(".cart__item-amount-count");
@@ -440,8 +439,7 @@ function getCartData(array, data) {
 }
 
 window.openWindowWhatsapp = function() {
-	window.open(`https://wa.me/34642302731?text=${cartString}`);
-
+	window.open(`https://wa.me/34642021401?text=${cartString}`);
 }
 
 
@@ -570,5 +568,13 @@ function clearPage(page) {
 // 		categoryButton.style.backgroundColor = "white"; // COLOR --> WHITE
 // 	}
 // }
+
+
+
+
+
+
+
+
 
 start();
